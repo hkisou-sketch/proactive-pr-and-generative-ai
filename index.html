@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>広報の仕事は、AIにも読まれている｜PROACTIVEの発表・報道と生成AI（株式会社IDEATECH）</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&family=Noto+Serif+JP:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F2F4F7;--paper:#FFFFFF;--paper2:#F8F9FB;
+  --ink:#0F1B33;--ink2:#3B475E;--ink3:#69738A;
+  --rule:#DDE2EA;--rule-strong:#B8C1CE;
+  --accent:#1F4D8F;--accent-ink:#163B70;--accent-soft:#E8EEF7;
+  --amber:#B97A1C;--amber-ink:#7E520F;--amber-soft:#FBF2E2;
+  --bar-g:#C3CBD7;
+  --sans:"BIZ UDPGothic","Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic UI","Meiryo",sans-serif;
+  --serif:"Noto Serif JP","Hiragino Mincho ProN","Yu Mincho","YuMincho",serif;
+  color-scheme:light;box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#0C111C;--paper:#131A29;--paper2:#18202F;--ink:#E7EBF2;--ink2:#B4BDCD;--ink3:#8993A8;
+    --rule:#273047;--rule-strong:#3A4560;--accent:#8DAEE8;--accent-ink:#C4D5F4;--accent-soft:#1B2844;
+    --amber:#E1A84B;--amber-ink:#F2CC8C;--amber-soft:#2D2414;--bar-g:#3E4862;color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0C111C;--paper:#131A29;--paper2:#18202F;--ink:#E7EBF2;--ink2:#B4BDCD;--ink3:#8993A8;
+  --rule:#273047;--rule-strong:#3A4560;--accent:#8DAEE8;--accent-ink:#C4D5F4;--accent-soft:#1B2844;
+  --amber:#E1A84B;--amber-ink:#F2CC8C;--amber-soft:#2D2414;--bar-g:#3E4862;color-scheme:dark;
+}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.95;letter-spacing:.02em;-webkit-text-size-adjust:100%}
+a{color:var(--accent-ink)}
+.wrap{max-width:900px;margin:0 auto;padding:40px 20px 64px}
+
+/* logo */
+.logo{display:block;width:auto;height:28px}
+.logo-w{display:none}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .logo-b{display:none}:root:not([data-theme="light"]) .logo-w{display:block}}
+:root[data-theme="dark"] .logo-b{display:none}
+:root[data-theme="dark"] .logo-w{display:block}
+
+/* header */
+header.top{background:var(--paper);border:1px solid var(--rule);border-top:5px solid var(--accent);padding:44px 52px 40px}
+.brand{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:34px}
+.brand span{font-size:13px;color:var(--ink3);padding-left:16px;border-left:1px solid var(--rule-strong);line-height:1.4}
+.to{font-size:14px;color:var(--ink2);margin:0 0 10px}
+h1{font-family:var(--serif);font-weight:700;font-size:clamp(28px,4.6vw,44px);line-height:1.35;letter-spacing:.03em;margin:0 0 14px}
+h1 .nb{display:inline-block}
+.sub{font-family:var(--serif);font-weight:600;font-size:clamp(16px,2vw,19px);color:var(--ink2);line-height:1.7;margin:0 0 26px}
+.meta{display:flex;flex-wrap:wrap;gap:4px 22px;font-size:12.5px;color:var(--ink3);border-top:1px solid var(--rule);padding-top:14px;margin:0}
+
+/* summary */
+.summary{background:var(--paper);border:1px solid var(--rule);margin-top:20px;padding:36px 52px}
+.summary h2{font-family:var(--serif);font-size:20px;margin:0 0 6px}
+.summary .lead{font-size:16.5px;margin:0 0 22px}
+.nums{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--rule);border:1px solid var(--rule)}
+.num{background:var(--paper);padding:20px 20px 18px}
+.num b{display:block;font-family:var(--serif);font-weight:700;font-size:40px;line-height:1.1;color:var(--accent-ink);letter-spacing:0}
+.num b small{font-size:18px;margin-left:2px}
+.num p{margin:10px 0 0;font-size:14px;line-height:1.75;color:var(--ink2)}
+.conclusion{margin:22px 0 0;padding:16px 20px;background:var(--accent-soft);border-left:4px solid var(--accent);font-size:16px;font-weight:700;line-height:1.85}
+
+/* sections */
+section.sec{background:var(--paper);border:1px solid var(--rule);margin-top:20px;padding:44px 52px 36px}
+.no{font-family:var(--serif);font-weight:600;color:var(--accent);font-size:14px;letter-spacing:.1em;margin:0 0 2px}
+section.sec h2{font-family:var(--serif);font-weight:700;font-size:clamp(21px,2.8vw,26px);line-height:1.5;margin:0 0 16px}
+section.sec h3{font-size:16.5px;margin:30px 0 8px}
+section.sec p{margin:0 0 1.1em;max-width:42em}
+.key{font-size:16.5px;font-weight:700;color:var(--ink);padding-bottom:16px;border-bottom:1px solid var(--rule);margin-bottom:18px!important}
+.mark{background:linear-gradient(transparent 62%,var(--amber-soft) 62%)}
+.note{font-size:13px;color:var(--ink3);line-height:1.8}
+
+/* chart blocks */
+.chart{border:1px solid var(--rule);background:var(--paper2);padding:20px 22px 16px;margin:20px 0 10px}
+.chart h4{margin:0 0 4px;font-size:15px}
+.chart .cap{margin:0 0 14px;font-size:12.5px;color:var(--ink3);line-height:1.7}
+.bars{display:grid;gap:10px}
+.bar{display:grid;grid-template-columns:13em minmax(0,1fr) 4.2em;align-items:center;gap:12px;font-size:14px}
+.bar .lab{line-height:1.4}
+.bar .track{height:20px;background:transparent;position:relative}
+.bar .fill{display:block;height:100%;width:var(--w);background:var(--bar-g);min-width:3px}
+.bar.hi .fill{background:var(--accent)}
+.bar.hi .lab,.bar.hi .val{font-weight:700;color:var(--accent-ink)}
+.bar.am .fill{background:var(--amber)}
+.bar .val{text-align:right;font-variant-numeric:tabular-nums;color:var(--ink2)}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:20px 0 10px}
+.card{background:var(--paper);border:1px solid var(--rule-strong);padding:18px 20px}
+.card.a{background:var(--accent-soft);border-color:var(--accent)}
+.card.m{background:var(--amber-soft);border-color:var(--amber)}
+.card h4{font-family:var(--serif);font-size:16px;margin:0 0 6px;line-height:1.55}
+.card .k{font-size:12.5px;color:var(--ink3);margin:0 0 10px}
+.card p{font-size:14.5px;margin:0 0 .5em}
+.big{font-family:var(--serif);font-weight:700;font-size:34px;line-height:1.2;color:var(--accent-ink)}
+.card.m .big{color:var(--amber-ink)}
+
+/* year chart */
+.years{display:grid;grid-template-columns:repeat(8,1fr);gap:8px;align-items:end;height:200px;padding-top:10px}
+.yr{display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%}
+.yr i{display:block;width:100%;max-width:46px;height:var(--h);background:var(--bar-g);min-height:2px}
+.yr.peak i{background:var(--ink3)}
+.yr.now i{background:var(--accent)}
+.yr .v{font-size:13px;font-weight:700;margin-bottom:4px;font-variant-numeric:tabular-nums}
+.ylabels{display:grid;grid-template-columns:repeat(8,1fr);gap:8px;margin-top:6px;font-size:12px;color:var(--ink3);text-align:center;border-top:1px solid var(--rule-strong);padding-top:6px}
+.ybrace{display:grid;grid-template-columns:repeat(8,1fr);gap:8px;margin-top:6px;font-size:12px}
+.ybrace span{grid-column:7 / span 2;text-align:center;color:var(--accent-ink);font-weight:700;border-top:2px solid var(--accent);padding-top:4px}
+
+/* flow */
+.flow{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:20px 0 10px;counter-reset:f}
+.step{position:relative;background:var(--paper);border:1px solid var(--rule-strong);padding:16px 14px 14px;counter-increment:f}
+.step::before{content:counter(f);display:block;font-family:var(--serif);font-weight:700;font-size:22px;color:var(--accent);line-height:1}
+.step h4{font-size:15px;margin:8px 0 6px;line-height:1.5}
+.step p{font-size:13.5px;line-height:1.75;margin:0 0 10px;color:var(--ink2)}
+.step .tag{display:block;font-size:12.5px;line-height:1.6;padding:7px 9px;background:var(--paper2);border-left:3px solid var(--rule-strong);color:var(--ink2)}
+.step.hi{border-color:var(--accent);background:var(--accent-soft)}
+.step.hi .tag{border-left-color:var(--accent);background:var(--paper)}
+.step:not(:last-child)::after{content:"";position:absolute;right:-9px;top:50%;width:8px;height:8px;border-top:2px solid var(--ink3);border-right:2px solid var(--ink3);transform:translateY(-50%) rotate(45deg);background:transparent}
+
+/* funnel */
+.funnel{display:grid;gap:8px;margin-top:6px}
+.fr{display:grid;grid-template-columns:minmax(0,1fr) 7em;gap:12px;align-items:center;font-size:14px}
+.fr .b{height:18px;width:var(--w);min-width:4px;background:var(--bar-g)}
+.fr.hi .b{background:var(--accent)}
+.fr .t{grid-column:1 / -1;font-size:13px;color:var(--ink2);margin-top:-4px}
+.fr .n{text-align:right;font-weight:700;font-variant-numeric:tabular-nums}
+
+/* qa, list */
+dl.qa{margin:8px 0 0}
+dl.qa dt{font-weight:700;font-size:16px;padding-top:16px;border-top:1px solid var(--rule)}
+dl.qa dt:first-child{border-top:0;padding-top:0}
+dl.qa dt::before{content:"Q.";font-family:var(--serif);color:var(--accent);margin-right:.5em}
+dl.qa dd{margin:6px 0 16px;font-size:15px;max-width:42em}
+ol.asks{list-style:none;counter-reset:a;padding:0;margin:16px 0 0}
+ol.asks>li{counter-increment:a;display:grid;grid-template-columns:44px minmax(0,1fr);gap:8px;padding:14px 0;border-top:1px solid var(--rule)}
+ol.asks>li::before{content:counter(a);font-family:var(--serif);font-weight:700;font-size:24px;color:var(--accent);line-height:1.2}
+ol.asks strong{display:block;font-size:16px;margin-bottom:2px}
+ol.asks p{margin:0;font-size:14.5px}
+.tbl{overflow-x:auto;margin:16px 0 6px}
+table{border-collapse:collapse;width:100%;font-size:14px;line-height:1.7}
+th{text-align:left;font-size:12.5px;color:var(--ink2);padding:8px 10px;border-bottom:2px solid var(--ink);background:var(--paper2);font-weight:700}
+td{padding:10px;border-bottom:1px solid var(--rule);vertical-align:top}
+td.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+
+footer{max-width:900px;margin:0 auto;padding:4px 20px 56px;font-size:12.5px;line-height:1.85;color:var(--ink3)}
+footer p{margin:0 0 .6em}
+
+@media (max-width:720px){
+  .wrap{padding:12px 10px 40px}
+  header.top{padding:28px 18px 24px;border-top-width:4px}
+  .brand{gap:12px;margin-bottom:24px}
+  .brand span{padding-left:12px;font-size:12px}
+  .logo{height:22px}
+  .summary,section.sec{padding:28px 18px 24px;margin-top:12px}
+  .nums{grid-template-columns:1fr}
+  .num b{font-size:36px}
+  .cols{grid-template-columns:1fr}
+  .flow{grid-template-columns:1fr;gap:16px}
+  .step:not(:last-child)::after{right:auto;left:50%;top:auto;bottom:-13px;transform:translateX(-50%) rotate(135deg)}
+  .bar{grid-template-columns:minmax(0,1fr) 4em;gap:4px 10px}
+  .bar .lab{grid-column:1 / -1}
+  .chart{padding:16px 14px 12px}
+  .years{height:170px;gap:4px}
+  .ylabels,.ybrace{gap:4px;font-size:11px}
+  ol.asks>li{grid-template-columns:34px minmax(0,1fr)}
+  table,thead,tbody,tr,td{display:block}
+  thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+  tr{border:1px solid var(--rule);margin-bottom:8px;background:var(--paper)}
+  td{border-bottom:1px solid var(--rule);padding:8px 12px}
+  td:last-child{border-bottom:0}
+  td::before{content:attr(data-label);display:block;font-size:11.5px;color:var(--ink3)}
+  td.n{text-align:left}
+  footer{padding:4px 14px 40px}
+}
+@media print{
+  @page{size:A4;margin:14mm}
+  body{background:#fff}
+  .wrap{padding:0}
+  section.sec,.summary{break-inside:avoid-page}
+  .logo-w{display:none!important}.logo-b{display:block!important}
+}
+
+.sumlist{margin:22px 0 0;padding-left:1.4em;font-size:15px;line-height:1.85}
+.sumlist li{margin-bottom:.7em}
+.sumlist strong{display:block;font-size:15.5px}
+h2.plain{font-family:var(--serif);font-weight:700;font-size:20px;margin:0 0 14px}
+dl.terms{display:grid;grid-template-columns:11em minmax(0,1fr);margin:0 0 12px;border-top:1px solid var(--rule)}
+dl.terms dt,dl.terms dd{padding:10px 0;border-bottom:1px solid var(--rule);margin:0;font-size:14.5px;line-height:1.75}
+dl.terms dt{font-weight:700;padding-right:14px}
+.src{font-size:12px;color:var(--ink3);line-height:1.75;margin:10px 0 0!important;max-width:none!important}
+.dots{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:4px;align-items:end;margin-top:6px}
+.dc{display:flex;flex-direction:column;align-items:center;gap:6px}
+.dc .pts{display:flex;flex-direction:column-reverse;align-items:center;gap:3px;min-height:150px}
+.dc .pts i{display:block;width:12px;height:12px;border-radius:50%;background:var(--ink3)}
+.dc.now .pts i{background:var(--accent)}
+.dc .yl{font-size:11.5px;color:var(--ink3);border-top:1px solid var(--rule-strong);width:100%;text-align:center;padding-top:4px}
+.dc.gap .yl{color:var(--amber-ink);font-weight:700}
+tr.me td{background:var(--accent-soft)}
+tr.tot td{font-weight:700;border-top:2px solid var(--ink)}
+table.mt td.hi{background:var(--accent-soft);font-weight:700;color:var(--accent-ink)}
+.ext{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:18px 0 14px}
+.excard{border:1px solid var(--rule-strong);background:var(--paper);padding:16px 18px;display:flex;flex-direction:column}
+.excard.a{border-color:var(--accent);background:var(--accent-soft)}
+.exk{font-size:12px;color:var(--ink3);margin:0 0 4px!important}
+.excard h4{font-family:var(--serif);font-size:15.5px;line-height:1.55;margin:0 0 8px}
+.excard p{font-size:13.5px;line-height:1.8;margin:0 0 10px}
+.excard .exs{margin-top:auto!important;font-size:11.5px;color:var(--ink3);padding-top:8px;border-top:1px solid var(--rule);margin-bottom:0!important}
+.callout{display:grid;grid-template-columns:auto minmax(0,1fr);gap:18px;align-items:center;margin:18px 0;padding:18px 22px;border:1px solid var(--amber);background:var(--amber-soft)}
+.callout b{font-family:var(--serif);font-weight:700;font-size:44px;line-height:1;color:var(--amber-ink)}
+.callout b small{font-size:18px;margin-left:2px}
+.callout p{margin:0!important;font-size:14.5px;max-width:none!important}
+.roles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:18px 0 6px}
+.role{border:1px solid var(--rule-strong);padding:18px;background:var(--paper)}
+.role.hi{border-color:var(--accent);background:var(--accent-soft)}
+.role .rn{font-family:var(--serif);font-weight:700;font-size:24px;color:var(--accent);line-height:1}
+.role h4{font-family:var(--serif);font-size:16px;margin:8px 0 8px}
+.role p{font-size:14px;line-height:1.8;margin:0}
+details.urls-d{margin:12px 0 16px;border:1px solid var(--rule);background:var(--paper2);padding:0 16px}
+details.urls-d summary{cursor:pointer;padding:10px 0;font-size:13.5px;font-weight:700;color:var(--ink2)}
+.urls{font-size:11.5px;color:var(--ink2);overflow-wrap:anywhere;word-break:break-all;line-height:1.7;margin:0 0 10px!important}
+@media (max-width:720px){
+  dl.terms{grid-template-columns:1fr}
+  dl.terms dt{border-bottom:0;padding-bottom:0}
+  .ext,.roles{grid-template-columns:1fr}
+  .dots{gap:2px}
+  .dc .pts i{width:9px;height:9px}
+  .dc .pts{min-height:120px}
+  .dc .yl{font-size:9px;letter-spacing:0}
+  .callout{grid-template-columns:1fr;gap:6px}
+  .sumlist{padding-left:1.2em}
+  table.mt td.hi{background:var(--accent-soft)}
+}
+@media print{.summary{break-after:page}details.urls-d{display:block}}
+td.d{white-space:nowrap}
+
+.about{background:var(--paper);border:1px solid var(--rule);margin-top:20px;padding:28px 52px 22px}
+.about h2{font-family:var(--serif);font-size:17px;margin:0 0 8px}
+.about p{font-size:15px;margin:0 0 .8em;max-width:44em}
+table.roles-t td:first-child{width:22%}
+table.roles-t td:last-child{width:20%;font-size:13px;color:var(--ink2)}
+.appendix{background:var(--paper2)}
+.appendix .no{color:var(--ink3)}
+@media (max-width:720px){.about{padding:22px 18px 16px;margin-top:12px}table.roles-t td:first-child,table.roles-t td:last-child{width:auto}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="top">
+  <div class="brand"><img class="logo logo-b" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyBpZD0iZGVzaWduIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA4NTAgMTMwIj4KICA8ZGVmcz4KICAgIDxzdHlsZT4KICAgICAgLmNscy0xIHsKICAgICAgICBmaWxsOiAjZjBmOwogICAgICB9CgogICAgICAuY2xzLTIgewogICAgICAgIGZpbGw6IGxpbWU7CiAgICAgIH0KCiAgICAgIC5jbHMtMyB7CiAgICAgICAgZmlsbDogI2ZmZjsKICAgICAgfQoKICAgICAgLmNscy00IHsKICAgICAgICBmaWxsOiAjMjEwMGZmOwogICAgICB9CgogICAgICAuY2xzLTUgewogICAgICAgIGZpbGw6ICNmY2ZmMDA7CiAgICAgIH0KCiAgICAgIC5jbHMtNiB7CiAgICAgICAgZmlsbDogcmVkOwogICAgICB9CgogICAgICAuY2xzLTcgewogICAgICAgIGZpbGw6IGFxdWE7CiAgICAgIH0KICAgIDwvc3R5bGU+CiAgPC9kZWZzPgogIDxnPgogICAgPHBvbHlnb24gcG9pbnRzPSI1MTUuOTkgMzIuODkgNTQyLjg4IDMyLjg5IDU0Mi44OCAxMDguNDcgNTU1LjUxIDEwOC40NyA1NTUuNTEgMzIuODkgNTgyLjUzIDMyLjg5IDU4Mi41MyAyMS40IDUxNS45OSAyMS40IDUxNS45OSAzMi44OSIvPgogICAgPHBvbHlnb24gcG9pbnRzPSI2MDIuMjUgMTA4LjQ3IDY2MCAxMDguNDcgNjYwIDk2Ljk4IDYxNC44OCA5Ni45OCA2MTQuODggNjkuNzIgNjU5LjExIDY5LjcyIDY1OS4xMSA1OC4yNCA2MTQuODggNTguMjQgNjE0Ljg4IDMyLjg5IDY2MCAzMi44OSA2NjAgMjEuNCA2MDIuMjUgMjEuNCA2MDIuMjUgMTA4LjQ3Ii8+CiAgICA8cGF0aCBkPSJNNzQ1LjkzLDg2LjYxYy00LjksNy4zNC0xMy42NSwxMS45MS0yMi44NSwxMS45MS0xNy44NywwLTMxLjM1LTE0LjQxLTMxLjM1LTMzLjUxczEzLjE4LTMzLjUxLDMxLjM1LTMzLjUxYzkuMTEsMCwxNy44Nyw0LjU2LDIyLjg2LDExLjkxbC41My43OCwxMC43NC01Ljk5LS42Ni0uOTNjLTcuOTgtMTEuMjktMTkuNTUtMTcuMjYtMzMuNDctMTcuMjYtMjUuMjksMC00NC4zNiwxOS4zNS00NC4zNiw0NXMxOS4wNyw0NSw0NC4zNiw0NWMxNC4wNSwwLDI1LjAzLTUuNjQsMzMuNTgtMTcuMjRsLjctLjk1LTEwLjkxLTUuOTktLjUyLjc4WiIvPgogICAgPHBvbHlnb24gcG9pbnRzPSI4MzcuMzcgMjEuNCA4MzcuMzcgNTcuOTggNzg5LjcxIDU3Ljk4IDc4OS43MSAyMS40IDc3Ny4wOCAyMS40IDc3Ny4wOCAxMDguNDcgNzg5LjcxIDEwOC40NyA3ODkuNzEgNjkuNDcgODM3LjM3IDY5LjQ3IDgzNy4zNyAxMDguNDcgODUwIDEwOC40NyA4NTAgMjEuNCA4MzcuMzcgMjEuNCIvPgogICAgPHBhdGggZD0iTTI4Mi44NSwyMS40aC0zMC4wOXY4Ny4wN2gzMC4wOWMyNi4yNywwLDQ0LjYyLTE3Ljg4LDQ0LjYyLTQzLjQ3cy0xOC4zNS00My42LTQ0LjYyLTQzLjZaTTI4Mi44NSw5Ni45OGgtMTcuNDVWMzIuODloMTcuNDVjMTguOSwwLDMxLjYsMTIuOSwzMS42LDMyLjExcy0xMi43LDMxLjk4LTMxLjYsMzEuOThaIi8+CiAgICA8cG9seWdvbiBwb2ludHM9IjQwNy45NCAzMi44OSA0MDcuOTQgMjEuNCAzNTAuMTggMjEuNCAzNTAuMTggMTA4LjQ3IDQwNy45NCAxMDguNDcgNDA3Ljk0IDk2Ljk4IDM2Mi44MiA5Ni45OCAzNjIuODIgNjkuNzIgNDA3LjA1IDY5LjcyIDQwNy4wNSA1OC4yNCAzNjIuODIgNTguMjQgMzYyLjgyIDMyLjg5IDQwNy45NCAzMi44OSIvPgogICAgPHBhdGggZD0iTTQ3NC4xNSwyMS40aC0xNC41MmwtMzQuOTgsODcuMDdoMTMuOTRsNy41Mi0xOC44Nmg0MS42OWw3LjUyLDE4Ljg2aDEzLjk1bC0zNS4xMS04Ny4wN1pNNDY3LjQzLDM1LjlsMTYuMzksNDIuMjJoLTMzLjgzbDE2LjUtNDIuMjJjLjQ2LDAsLjQ4LDAsLjk0LDBaIi8+CiAgICA8cG9seWdvbiBwb2ludHM9IjIyNi4wNSAzNC4wNCAyMjYuMDUgMjEuNCAyMTQuMzQgMjEuNCAyMDEuNzEgMjEuNCAxOTAgMjEuNCAxOTAgMzQuMDQgMjAxLjcxIDM0LjA0IDIwMS43MSA5NS44NCAxOTAgOTUuODQgMTkwIDEwOC40NyAyMDEuNzEgMTA4LjQ3IDIxNC4zNCAxMDguNDcgMjI2LjA1IDEwOC40NyAyMjYuMDUgOTUuODQgMjE0LjM0IDk1Ljg0IDIxNC4zNCAzNC4wNCAyMjYuMDUgMzQuMDQiLz4KICA8L2c+CiAgPGc+CiAgICA8cGF0aCBjbGFzcz0iY2xzLTYiIGQ9Ik01Ny43Myw0NC4wM2wzLjgyLDMuMDljNi4yLTMuNDksMTMuMzUtNS40OSwyMC45Ny01LjQ5LDcuMjMsMCwxNC4wMywxLjgsMjAuMDEsNC45NmwtMy42OS0zLjc0LDYuNy02Ljc5LTguNDctNC4zOSw0LjI3LTguNTItOS40MS0xLjU1LDEuNDMtOS40My05LjQzLDEuNDMtMS41NS05LjQxLTguNTIsNC4yNy00LjM5LTguNDctNi43OSw2LjctNi43OS02LjctNC4zOSw4LjQ3LTguNTItNC4yNy0xLjU1LDkuNDEtOS40My0xLjQzLDEuNDMsOS40My05LjQxLDEuNTUsNC4yNyw4LjUyLTguNDcsNC4zOSw2LjcsNi43OS02LjcsNi43OSwxLjE3LjYxLDYuNTEtNS42NywzMC4yMi0uNTVaIi8+CiAgICA8cGF0aCBjbGFzcz0iY2xzLTQiIGQ9Ik0zOS42Niw4NC40OWMwLTQuMjYuNjMtOC4zNywxLjc5LTEyLjI1bC0uMDItLjE0LTkuNDMsMS40MywxLjQzLTkuNDMtOS40MS0xLjU1LDQuMjctOC41Mi03LjMtMy43OC0xNi4yOSwxNC4xOEwwLDk0LjI4bDE1LjU4LDI1LjksMjguNTksOS44MiwxOC45Ni03LjI5Yy0xMy45My03LjA4LTIzLjQ3LTIxLjUzLTIzLjQ3LTM4LjIyWiIvPgogICAgPHBhdGggY2xhc3M9ImNscy0xIiBkPSJNMjQuMDIsNjIuNTVsOS40MSwxLjU1LTEuNDMsOS40Myw5LjQzLTEuNDMuMDIuMTRjMy4yLTEwLjc1LDEwLjUtMTkuNzMsMjAuMS0yNS4xMmwtMy44Mi0zLjA5LTMwLjIyLjU1LTYuNTEsNS42Nyw3LjMsMy43OC00LjI3LDguNTJaIi8+CiAgICA8cGF0aCBjbGFzcz0iY2xzLTIiIGQ9Ik0xMDIuNTIsNDYuNTlsMy4wMSwzLjA1LTguNDcsNC4zOSw0LjI3LDguNTItOS40MSwxLjU1LDEuNDMsOS40My05LjQzLTEuNDMtLjQzLDIuNTksMy41MSwxOC4wMS0xNC42NCwyNi40NS05LjI1LDMuNTZjNS44MiwyLjk2LDEyLjQsNC42NCwxOS4zOCw0LjY0LDIzLjY3LDAsNDIuODUtMTkuMTksNDIuODUtNDIuODUsMC0xNi40NC05LjI2LTMwLjcxLTIyLjg1LTM3LjlaIi8+CiAgICA8cGF0aCBjbGFzcz0iY2xzLTUiIGQ9Ik02MS41NCw0Ny4xMmwxOS42OCwxNS45MiwyLjI3LDExLjY1LjQzLTIuNTksOS40MywxLjQzLTEuNDMtOS40Myw5LjQxLTEuNTUtNC4yNy04LjUyLDguNDctNC4zOS0zLjAxLTMuMDVjLTUuOTctMy4xNi0xMi43OC00Ljk2LTIwLjAxLTQuOTYtNy42MiwwLTE0Ljc3LDItMjAuOTcsNS40OVoiLz4KICAgIDxwYXRoIGNsYXNzPSJjbHMtNyIgZD0iTTg3LjAyLDkyLjdsLTMuNTEtMTguMDEtMS4xMyw2LjgyLTguNTItNC4yNy00LjM5LDguNDctNi43OS02LjctNi43OSw2LjctNC4zOS04LjQ3LTguNTIsNC4yNy0xLjUzLTkuMjdjLTEuMTYsMy44OC0xLjc5LDcuOTktMS43OSwxMi4yNSwwLDE2LjY5LDkuNTUsMzEuMTQsMjMuNDcsMzguMjJsOS4yNS0zLjU2LDE0LjY0LTI2LjQ1WiIvPgogICAgPHBhdGggY2xhc3M9ImNscy0zIiBkPSJNNjEuNTQsNDcuMTJjLTkuNTksNS40LTE2LjksMTQuMzctMjAuMSwyNS4xMmwxLjUzLDkuMjcsOC41Mi00LjI3LDQuMzksOC40Nyw2Ljc5LTYuNyw2Ljc5LDYuNyw0LjM5LTguNDcsOC41Miw0LjI3LDEuMTMtNi44Mi0yLjI3LTExLjY1LTE5LjY4LTE1LjkyWiIvPgogIDwvZz4KPC9zdmc+" alt="IDEATECH" height="28" width="183"><img class="logo logo-w" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyBpZD0iZGVzaWduIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA4NTAgMTMwIj4KICA8ZGVmcz4KICAgIDxzdHlsZT4KICAgICAgLmNscy0xIHsKICAgICAgICBmaWxsOiAjZjBmOwogICAgICB9CgogICAgICAuY2xzLTIgewogICAgICAgIGZpbGw6IGxpbWU7CiAgICAgIH0KCiAgICAgIC5jbHMtMyB7CiAgICAgICAgZmlsbDogI2ZmZjsKICAgICAgfQoKICAgICAgLmNscy00IHsKICAgICAgICBmaWxsOiAjMjEwMGZmOwogICAgICB9CgogICAgICAuY2xzLTUgewogICAgICAgIGZpbGw6ICNmY2ZmMDA7CiAgICAgIH0KCiAgICAgIC5jbHMtNiB7CiAgICAgICAgZmlsbDogcmVkOwogICAgICB9CgogICAgICAuY2xzLTcgewogICAgICAgIGZpbGw6IGFxdWE7CiAgICAgIH0KICAgIDwvc3R5bGU+CiAgPC9kZWZzPgogIDxnPgogICAgPHBvbHlnb24gY2xhc3M9ImNscy0zIiBwb2ludHM9IjUxNS45OSAzMi44OSA1NDIuODggMzIuODkgNTQyLjg4IDEwOC40NyA1NTUuNTEgMTA4LjQ3IDU1NS41MSAzMi44OSA1ODIuNTMgMzIuODkgNTgyLjUzIDIxLjQgNTE1Ljk5IDIxLjQgNTE1Ljk5IDMyLjg5Ii8+CiAgICA8cG9seWdvbiBjbGFzcz0iY2xzLTMiIHBvaW50cz0iNjAyLjI1IDEwOC40NyA2NjAgMTA4LjQ3IDY2MCA5Ni45OCA2MTQuODggOTYuOTggNjE0Ljg4IDY5LjcyIDY1OS4xMSA2OS43MiA2NTkuMTEgNTguMjQgNjE0Ljg4IDU4LjI0IDYxNC44OCAzMi44OSA2NjAgMzIuODkgNjYwIDIxLjQgNjAyLjI1IDIxLjQgNjAyLjI1IDEwOC40NyIvPgogICAgPHBhdGggY2xhc3M9ImNscy0zIiBkPSJNNzQ1LjkzLDg2LjYxYy00LjksNy4zNC0xMy42NSwxMS45MS0yMi44NSwxMS45MS0xNy44NywwLTMxLjM1LTE0LjQxLTMxLjM1LTMzLjUxczEzLjE4LTMzLjUxLDMxLjM1LTMzLjUxYzkuMTEsMCwxNy44Nyw0LjU2LDIyLjg2LDExLjkxbC41My43OCwxMC43NC01Ljk5LS42Ni0uOTNjLTcuOTgtMTEuMjktMTkuNTUtMTcuMjYtMzMuNDctMTcuMjYtMjUuMjksMC00NC4zNiwxOS4zNS00NC4zNiw0NXMxOS4wNyw0NSw0NC4zNiw0NWMxNC4wNSwwLDI1LjAzLTUuNjQsMzMuNTgtMTcuMjRsLjctLjk1LTEwLjkxLTUuOTktLjUyLjc4WiIvPgogICAgPHBvbHlnb24gY2xhc3M9ImNscy0zIiBwb2ludHM9IjgzNy4zNyAyMS40IDgzNy4zNyA1Ny45OCA3ODkuNzEgNTcuOTggNzg5LjcxIDIxLjQgNzc3LjA4IDIxLjQgNzc3LjA4IDEwOC40NyA3ODkuNzEgMTA4LjQ3IDc4OS43MSA2OS40NyA4MzcuMzcgNjkuNDcgODM3LjM3IDEwOC40NyA4NTAgMTA4LjQ3IDg1MCAyMS40IDgzNy4zNyAyMS40Ii8+CiAgICA8cGF0aCBjbGFzcz0iY2xzLTMiIGQ9Ik0yODIuODUsMjEuNGgtMzAuMDl2ODcuMDdoMzAuMDljMjYuMjcsMCw0NC42Mi0xNy44OCw0NC42Mi00My40N3MtMTguMzUtNDMuNi00NC42Mi00My42Wk0yODIuODUsOTYuOThoLTE3LjQ1VjMyLjg5aDE3LjQ1YzE4LjksMCwzMS42LDEyLjksMzEuNiwzMi4xMXMtMTIuNywzMS45OC0zMS42LDMxLjk4WiIvPgogICAgPHBvbHlnb24gY2xhc3M9ImNscy0zIiBwb2ludHM9IjQwNy45NCAzMi44OSA0MDcuOTQgMjEuNCAzNTAuMTggMjEuNCAzNTAuMTggMTA4LjQ3IDQwNy45NCAxMDguNDcgNDA3Ljk0IDk2Ljk4IDM2Mi44MiA5Ni45OCAzNjIuODIgNjkuNzIgNDA3LjA1IDY5LjcyIDQwNy4wNSA1OC4yNCAzNjIuODIgNTguMjQgMzYyLjgyIDMyLjg5IDQwNy45NCAzMi44OSIvPgogICAgPHBhdGggY2xhc3M9ImNscy0zIiBkPSJNNDc0LjE1LDIxLjRoLTE0LjUybC0zNC45OCw4Ny4wN2gxMy45NGw3LjUyLTE4Ljg2aDQxLjY5bDcuNTIsMTguODZoMTMuOTVsLTM1LjExLTg3LjA3Wk00NjcuNDMsMzUuOWwxNi4zOSw0Mi4yMmgtMzMuODNsMTYuNS00Mi4yMmMuNDYsMCwuNDgsMCwuOTQsMFoiLz4KICAgIDxwb2x5Z29uIGNsYXNzPSJjbHMtMyIgcG9pbnRzPSIyMjYuMDUgMzQuMDQgMjI2LjA1IDIxLjQgMjE0LjM0IDIxLjQgMjAxLjcxIDIxLjQgMTkwIDIxLjQgMTkwIDM0LjA0IDIwMS43MSAzNC4wNCAyMDEuNzEgOTUuODQgMTkwIDk1Ljg0IDE5MCAxMDguNDcgMjAxLjcxIDEwOC40NyAyMTQuMzQgMTA4LjQ3IDIyNi4wNSAxMDguNDcgMjI2LjA1IDk1Ljg0IDIxNC4zNCA5NS44NCAyMTQuMzQgMzQuMDQgMjI2LjA1IDM0LjA0Ii8+CiAgPC9nPgogIDxnPgogICAgPHBhdGggY2xhc3M9ImNscy02IiBkPSJNNTcuNzMsNDQuMDNsMy44MiwzLjA5YzYuMi0zLjQ5LDEzLjM1LTUuNDksMjAuOTctNS40OSw3LjIzLDAsMTQuMDMsMS44LDIwLjAxLDQuOTZsLTMuNjktMy43NCw2LjctNi43OS04LjQ3LTQuMzksNC4yNy04LjUyLTkuNDEtMS41NSwxLjQzLTkuNDMtOS40MywxLjQzLTEuNTUtOS40MS04LjUyLDQuMjctNC4zOS04LjQ3LTYuNzksNi43LTYuNzktNi43LTQuMzksOC40Ny04LjUyLTQuMjctMS41NSw5LjQxLTkuNDMtMS40MywxLjQzLDkuNDMtOS40MSwxLjU1LDQuMjcsOC41Mi04LjQ3LDQuMzksNi43LDYuNzktNi43LDYuNzksMS4xNy42MSw2LjUxLTUuNjcsMzAuMjItLjU1WiIvPgogICAgPHBhdGggY2xhc3M9ImNscy00IiBkPSJNMzkuNjYsODQuNDljMC00LjI2LjYzLTguMzcsMS43OS0xMi4yNWwtLjAyLS4xNC05LjQzLDEuNDMsMS40My05LjQzLTkuNDEtMS41NSw0LjI3LTguNTItNy4zLTMuNzgtMTYuMjksMTQuMThMMCw5NC4yOGwxNS41OCwyNS45LDI4LjU5LDkuODIsMTguOTYtNy4yOWMtMTMuOTMtNy4wOC0yMy40Ny0yMS41My0yMy40Ny0zOC4yMloiLz4KICAgIDxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTI0LjAyLDYyLjU1bDkuNDEsMS41NS0xLjQzLDkuNDMsOS40My0xLjQzLjAyLjE0YzMuMi0xMC43NSwxMC41LTE5LjczLDIwLjEtMjUuMTJsLTMuODItMy4wOS0zMC4yMi41NS02LjUxLDUuNjcsNy4zLDMuNzgtNC4yNyw4LjUyWiIvPgogICAgPHBhdGggY2xhc3M9ImNscy0yIiBkPSJNMTAyLjUyLDQ2LjU5bDMuMDEsMy4wNS04LjQ3LDQuMzksNC4yNyw4LjUyLTkuNDEsMS41NSwxLjQzLDkuNDMtOS40My0xLjQzLS40MywyLjU5LDMuNTEsMTguMDEtMTQuNjQsMjYuNDUtOS4yNSwzLjU2YzUuODIsMi45NiwxMi40LDQuNjQsMTkuMzgsNC42NCwyMy42NywwLDQyLjg1LTE5LjE5LDQyLjg1LTQyLjg1LDAtMTYuNDQtOS4yNi0zMC43MS0yMi44NS0zNy45WiIvPgogICAgPHBhdGggY2xhc3M9ImNscy01IiBkPSJNNjEuNTQsNDcuMTJsMTkuNjgsMTUuOTIsMi4yNywxMS42NS40My0yLjU5LDkuNDMsMS40My0xLjQzLTkuNDMsOS40MS0xLjU1LTQuMjctOC41Miw4LjQ3LTQuMzktMy4wMS0zLjA1Yy01Ljk3LTMuMTYtMTIuNzgtNC45Ni0yMC4wMS00Ljk2LTcuNjIsMC0xNC43NywyLTIwLjk3LDUuNDlaIi8+CiAgICA8cGF0aCBjbGFzcz0iY2xzLTciIGQ9Ik04Ny4wMiw5Mi43bC0zLjUxLTE4LjAxLTEuMTMsNi44Mi04LjUyLTQuMjctNC4zOSw4LjQ3LTYuNzktNi43LTYuNzksNi43LTQuMzktOC40Ny04LjUyLDQuMjctMS41My05LjI3Yy0xLjE2LDMuODgtMS43OSw3Ljk5LTEuNzksMTIuMjUsMCwxNi42OSw5LjU1LDMxLjE0LDIzLjQ3LDM4LjIybDkuMjUtMy41NiwxNC42NC0yNi40NVoiLz4KICAgIDxwYXRoIGNsYXNzPSJjbHMtMyIgZD0iTTYxLjU0LDQ3LjEyYy05LjU5LDUuNC0xNi45LDE0LjM3LTIwLjEsMjUuMTJsMS41Myw5LjI3LDguNTItNC4yNyw0LjM5LDguNDcsNi43OS02LjcsNi43OSw2LjcsNC4zOS04LjQ3LDguNTIsNC4yNywxLjEzLTYuODItMi4yNy0xMS42NS0xOS42OC0xNS45MloiLz4KICA8L2c+Cjwvc3ZnPg==" alt="IDEATECH" height="28" width="183"><span>PROACTIVE LLMO支援チーム</span></div>
+  <p class="to">SCSK株式会社　広報ご担当の皆さま、PROACTIVEご担当の皆さまへ</p>
+  <h1><span class="nb">広報の仕事は、</span><span class="nb">AIにも読まれている</span></h1>
+  <p class="sub">PROACTIVEの発表・報道と、生成AIの言及・推奨に関する分析</p>
+  <p class="meta"><span>作成：株式会社IDEATECH（PROACTIVE LLMO支援チーム）</span><span>2026年10月</span></p>
+</header>
+
+<section class="about">
+  <h2>この資料について</h2>
+  <p>株式会社IDEATECHは、PROACTIVEの生成AI対策（ChatGPTなどのAIに、製品を正しく知ってもらい、推奨してもらうための取り組み）をご支援しています。毎月、AIの回答と、その根拠になっているページを計測しています。</p>
+  <p>その中で、広報の皆さまが出されているプレスリリースと、それを受けた専門メディアの記事が、AIの回答の材料として働いていることがデータで見えてきました。AI検索の時代に広報の仕事がどう効いているのか、そしてPROACTIVEでこれから何ができるのかを、広報ご担当の皆さまと共有したく、この資料をまとめました。</p>
+</section>
+
+<section class="summary" id="summary">
+  <h2>要点</h2>
+  <div class="nums">
+    <div class="num"><b>93.7<small>%</small></b><p>AIがPROACTIVE関連の質問に答えるとき、根拠にしたページのうちSCSK以外のサイトが占める割合</p></div>
+    <div class="num"><b>4<small>本／</small>6<small>本</small></b><p>直近12か月のPROACTIVEの発表のうち、専門メディアの記事になったことを確認できた本数（記事は計9本）</p></div>
+    <div class="num"><b>3<small>誌 対 </small>0<small>誌</small></b><p>「AIエージェント」関連の発表を記事にした主要IT専門媒体の数。Works HUE 対 PROACTIVE（当方の確認の範囲）</p></div>
+  </div>
+  <ol class="sumlist">
+    <li><strong>AIは、社外の情報で答えている。</strong>AIが根拠にしたページの9割以上はSCSKの外にあります。とくに「おすすめのERPは？」のように製品名を出さない質問では、PROACTIVEのサイトが根拠に使われた割合は2.3%でした。検討の入口でのPROACTIVEの印象は、社外の情報で決まっています。</li>
+    <li><strong>AIが読む社外の情報の中心に、公式発表と専門メディアがある。</strong>国内のAIの引用元を調べた外部調査では、業種を問わない全体でPR TIMESがChatGPTの引用元2位でした。業界を絞った質問では、AIはその業界の定番の専門メディアを読みます。ERPにとっての定番は、IT専門媒体です。</li>
+    <li><strong>PROACTIVEの発表は、専門メディアの記事になっている。</strong>直近12か月の6本の発表のうち4本で、IT Leaders、クラウドWatchなどの記事を確認できました。広報の皆さまが出されている発表は、AIが読む材料を実際に生んでいます。</li>
+    <li><strong>差がついたのは、新しい論点。</strong>Works HUEは9月4日にAIエージェントとの接続規格（MCP）への対応を発表し、IT専門媒体3誌が記事にしました。同じ月、ChatGPTは、前月までPROACTIVEを「第一候補」としていた回答で、Works HUEを第一候補に入れ替えています。PROACTIVEのAIエージェント戦略（5月29日）は、確認できた範囲では物流専門媒体の1本で、主要IT専門媒体の記事は見つかりませんでした。</li>
+  </ol>
+  <p class="conclusion">AI検索で効いているのは、公式の発表と、それを受けた専門メディアの記事、つまり広報の皆さまの仕事です。PROACTIVEでは、事業部門が題材を出し、広報の皆さまが発表と媒体への情報提供を担う形で、発表の機会を途切れさせないこと、そしてAIの選定基準が動いている論点で先に出していくことを、ご一緒に検討いただきたいと考えています。</p>
+</section>
+
+<section class="sec">
+  <h2 class="plain">この資料で使う言葉</h2>
+  <dl class="terms">
+    <dt>言及／推奨</dt><dd>AIの回答に製品名が出ることを「言及」、候補として勧められることを「推奨」と呼びます。</dd>
+    <dt>引用</dt><dd>AIが回答の根拠として示したページです。ChatGPTなどは、回答の中や末尾に参照したページを示します。</dd>
+    <dt>指名／非指名の質問</dt><dd>「PROACTIVEの特長は？」のように製品名を含む質問が指名、「おすすめのERPは？」のように含まない質問が非指名です。買い手の検討は、たいてい非指名から始まります。</dd>
+    <dt>編集記事</dt><dd>媒体の編集部が書いた記事です。配信されたリリースをそのまま転載したページは含めません。</dd>
+  </dl>
+</section>
+
+<section class="sec">
+  <p class="no">1</p>
+  <h2>AIは、何を読んで答えているか</h2>
+  <p class="key">AIがPROACTIVE関連の質問に答えるとき、根拠にしたページの93.7%はSCSKの外にありました。</p>
+  <div class="chart">
+    <h4>AIが根拠として引用したページの出どころ（引用681件）</h4>
+    <div class="bars">
+      <div class="bar"><span class="lab">メディア・ブログの記事</span><span class="track"><span class="fill" style="--w:100%"></span></span><span class="val">55.4%</span></div>
+      <div class="bar"><span class="lab">競合・代替製品のサイト</span><span class="track"><span class="fill" style="--w:32.1%"></span></span><span class="val">17.8%</span></div>
+      <div class="bar"><span class="lab">レビュー・比較サイト</span><span class="track"><span class="fill" style="--w:25.5%"></span></span><span class="val">14.1%</span></div>
+      <div class="bar hi"><span class="lab">PROACTIVEのサイト</span><span class="track"><span class="fill" style="--w:11.4%"></span></span><span class="val">6.3%</span></div>
+      <div class="bar"><span class="lab">規制・公的機関</span><span class="track"><span class="fill" style="--w:10.6%"></span></span><span class="val">5.9%</span></div>
+      <div class="bar"><span class="lab">プレスリリース配信サイト</span><span class="track"><span class="fill" style="--w:1.1%"></span></span><span class="val">0.6%</span></div>
+    </div>
+    <p class="src">出典：Ahrefs Brand Radar「Cited pages」（2026-09-24取得）。ChatGPT・Gemini・Copilot・Perplexityの回答で引用された1,000ページを集計。</p>
+  </div>
+  <div class="cols">
+    <div class="card">
+      <p class="k">製品名を含む質問（例：「PROACTIVEの特長は？」）</p>
+      <div class="big">28.7%</div>
+      <p>AIがPROACTIVEのサイトを根拠にした割合</p>
+    </div>
+    <div class="card a">
+      <p class="k">製品名を含まない質問（例：「おすすめのERPは？」）</p>
+      <div class="big">2.3%</div>
+      <p>AIがPROACTIVEのサイトを根拠にした割合</p>
+    </div>
+  </div>
+  <p>PROACTIVEのサイトは、根拠に使われたときには回答の最も上位に置かれており、AIはSCSKの一次情報を信頼しています。ただ、製品名を知らない段階の質問では、AIはPROACTIVEのサイトをほとんど読んでいません。買い手が最初に触れる「おすすめ」や「選び方」の答えは、社外の情報からつくられています。</p>
+  <p class="src">出典：Ahrefs Brand Radar 応答ログ（300回答、2026-09-24計測）。指名115件中33件、非指名395件中9件。</p>
+</section>
+
+<section class="sec">
+  <p class="no">2</p>
+  <h2>外部の調査：日本のAIは、どこを引用しているか</h2>
+  <p class="key">業種を問わない全体ではPR TIMESが、業界を絞った質問ではその業界の専門メディアが、AIに多く引用されています。</p>
+  <div class="ext">
+    <div class="excard">
+      <p class="exk">全体の傾向</p>
+      <h4>PR TIMESは、ChatGPTで2位の引用元</h4>
+      <p>業種を絞らない日本の幅広い質問で集計すると、PR TIMESはChatGPTの引用ドメインで2位を保ち、6つのAIのうち5つで上位10位以内に入っています。企業の公式発表が日付付きで蓄積された場所として、安定して引用されています。</p>
+      <p class="exs">Ahrefs「日本でAIが引用するドメインランキング 2026年9月版」</p>
+    </div>
+    <div class="excard a">
+      <p class="exk">業界を絞った場合</p>
+      <h4>AIは、業界の定番メディアを読む</h4>
+      <p>業界を絞った集計（同調査では自動車）では、上位の大半を業界の専門メディアが占め、3か月たっても顔ぶれはほとんど変わりませんでした。Ahrefsは、そうした媒体への露出（寄稿・データ提供・プレスリリース配信）がAIに引用される近道になると述べています。</p>
+      <p class="exs">Ahrefs「日本でAIが引用するドメインランキング」2026年6月版・9月版</p>
+    </div>
+    <div class="excard a">
+      <p class="exk">IT系のニュースサイト</p>
+      <h4>ChatGPTの引用上位に、マイナビニュースとITmedia</h4>
+      <p>2026年6月版では、ChatGPTが日本で引用するドメインの上位10位に、マイナビニュース（7位）とITmedia（10位）が入っていました（いずれもドメイン全体の順位）。</p>
+      <p class="exs">Ahrefs「日本でAIが引用するドメインランキング 2026年6月版」</p>
+    </div>
+  </div>
+  <p>PROACTIVEの計測でも、ERPに関する質問では配信サイトのページそのものの引用は0.6%でした。業界の質問でAIが読むのは、発表を受けて専門メディアが書いた記事のほうです。配信は、その記事が生まれるきっかけとして効いています。</p>
+  <p class="note">AIの引用先の順位は数か月で動きます（9月版のChatGPTの上位10位では、マイナビニュースとITmediaは10位以内に入っていません）。特定の媒体の順位ではなく、「業界の質問では業界の定番媒体が読まれる」という傾向として扱っています。</p>
+</section>
+
+<section class="sec">
+  <p class="no">3</p>
+  <h2>PROACTIVEの発表は、記事になっている</h2>
+  <p class="key">直近12か月のPROACTIVEの発表6本のうち4本で、専門メディアの編集記事を確認できました。記事は計9本です。</p>
+  <div class="tbl">
+    <table class="rel">
+      <thead><tr><th>配信日</th><th>発表の内容</th><th>確認できた編集記事</th></tr></thead>
+      <tbody>
+        <tr class="me"><td class="d" data-label="配信日">2026-06-12</td><td data-label="発表の内容">PROACTIVE MESの提供開始</td><td data-label="確認できた編集記事"><b>4本</b>　IT Leaders、クラウドWatch、週刊BCN+、IoTNEWS</td></tr>
+        <tr><td class="d" data-label="配信日">2026-05-29</td><td data-label="発表の内容">「PROACTIVE AIエージェント」戦略</td><td data-label="確認できた編集記事"><b>1本</b>　LOGISTICS TODAY（物流専門媒体）</td></tr>
+        <tr><td class="d" data-label="配信日">2026-05-14</td><td data-label="発表の内容">建設業向けJV管理機能</td><td data-label="確認できた編集記事"><b>1本</b>　クラウドWatch</td></tr>
+        <tr class="me"><td class="d" data-label="配信日">2026-04-24</td><td data-label="発表の内容">新リース会計基準への対応</td><td data-label="確認できた編集記事"><b>3本</b>　IT Leaders、クラウドWatch、電波新聞デジタル</td></tr>
+        <tr><td class="d" data-label="配信日">2026-03-18</td><td data-label="発表の内容">「らくらく通勤費」との連携強化</td><td data-label="確認できた編集記事">確認できず</td></tr>
+        <tr><td class="d" data-label="配信日">2025-10-22</td><td data-label="発表の内容">CO×COカルテ　CO₂自動算定</td><td data-label="確認できた編集記事">確認できず</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="src">出典：発表はPR TIMES「SCSK株式会社」企業ページおよびSCSKニュースリリース（2026-10-15取得）。編集記事は各媒体のサイトと検索で当方が確認（2026-10-16）。見つからなかった記事がある可能性があるため、本数は「少なくとも」の値です。</p>
+  <details class="urls-d">
+    <summary>確認できた編集記事のURL</summary>
+    <p class="urls">PROACTIVE MES（2026-06-12）<br>https://it.impress.co.jp/articles/-/29456<br>https://cloud.watch.impress.co.jp/docs/news/2116748.html<br>https://www.weeklybcn.com/journal/news/detail/20260612_215840.html<br>https://iotnews.jp/manufacturing/274311/</p>
+    <p class="urls">PROACTIVE AIエージェント戦略（2026-05-29）<br>https://www.logi-today.com/958061</p>
+    <p class="urls">JV管理機能（2026-05-14）<br>https://cloud.watch.impress.co.jp/docs/news/2108587.html</p>
+    <p class="urls">新リース会計基準対応（2026-04-24）<br>https://it.impress.co.jp/articles/-/29285<br>https://cloud.watch.impress.co.jp/docs/news/2104465.html<br>https://dempa-digital.com/?p=713940</p>
+  </details>
+  <p>とくにクラウドWatchとIT Leadersは、PROACTIVEの製品ニュースを継続して記事にしています。PROACTIVEについて書かれた社外のページを見ても、権威の高いものの多くは「SCSK、◯◯を提供」といった、発表を受けて書かれた専門メディアの記事でした。AIがPROACTIVEを知るための社外の材料は、広報の皆さまの発表から生まれています。</p>
+  <p>裏を返せば、発表のない期間には社外の新しい記事も生まれません。6月のMES以降、PROACTIVEの新しい製品記事は、今回の確認の範囲では見つかっていません。</p>
+</section>
+
+<section class="sec">
+  <p class="no">4</p>
+  <h2>差がついたのは、新しい論点</h2>
+  <p class="key">AIの選定基準として新しく語られ始めた「AIエージェントとの接続」で、先に発表し、IT専門媒体に載ったのは競合でした。</p>
+  <div class="cols">
+    <div class="card m">
+      <p class="k">Works HUE　2026年9月4日</p>
+      <h4>MCP対応を発表し、IT専門媒体3誌が記事に</h4>
+      <p>AIエージェントとの接続規格（MCP）への対応を、PR TIMESと自社ニュースルームで発表。クラウドWatch、IT Leaders、CodeZineが記事にしました。9月の計測では、情報システム部門長を想定した「AIエージェント対応の国産ERP」の質問で、ChatGPTがこの発表を根拠に、前月PROACTIVEとしていた第一候補をWorks HUEに入れ替えています。</p>
+    </div>
+    <div class="card">
+      <p class="k">PROACTIVE　2026年5月29日</p>
+      <h4>AIエージェント戦略を発表。記事は物流専門媒体の1本</h4>
+      <p>会計・販売・生産・人事の4領域でAIエージェントを展開する戦略を発表。確認できた編集記事はLOGISTICS TODAYの1本で、IT Leaders・クラウドWatchなどの主要IT専門媒体の記事は見つかりませんでした。9月の計測では、MCPに触れたAIの回答は、いずれもPROACTIVE以外に結びついていました。</p>
+    </div>
+  </div>
+  <p>PROACTIVEも、5月にAIエージェント戦略を発表しています。Works HUEのMCP対応より約3か月早い時期です。違いとして考えられるのは、その発表がIT専門媒体の記事になったかどうか、そして「接続規格への対応」のような具体的な論点で語られていたかどうかです。AIの選定軸が新しく動いている論点では、比較の材料が少ないため、先に専門媒体に載った情報がAIの回答の材料になりやすいと考えられます。</p>
+  <p class="note">1つの質問・1つのAIでの観測で、因果を示すものではありません。また、このときChatGPTが引用したのは、専門媒体の記事ではなくWorks HUEのニュースルームのページでした。</p>
+  <h3>配信の本数を増やせば良い、というわけではありません</h3>
+  <p>各社のPR TIMESでの配信本数（直近12か月）と、製品名を出さない質問でのAIの言及を並べると、本数との関係は見られませんでした。SAPとオービックはこの期間の配信が0本（製品の発表は自社サイトで行っています）でも言及は上位で、70本を配信したミロク情報サービスは1回答にとどまります。AIが製品を挙げるかどうかには、市場での地位や歴史といった時間のかかる要素も効いています。大事なのは本数そのものより、発表を途切れさせないことと、どの論点で先に出すかです。</p>
+  <p class="src">各社の配信本数と言及数の一覧は、付録Bに掲載しています。</p>
+</section>
+
+<section class="sec">
+  <p class="no">5</p>
+  <h2>まだ発表していない事実：SOC1保証報告書</h2>
+  <p class="key">PROACTIVEは2026年4月、SOC1保証報告書（Type2）を受領しています。お知らせでの掲示にとどまり、プレスリリースとしては配信されていません。</p>
+  <p>SOC1保証報告書は、サービスを提供する側の内部統制のうち、利用する企業の財務報告に関係するものについて、監査人が整備・運用の状況を評価した報告書です。経理部門が基幹システムを選ぶとき、監査や内部統制への対応は大きな関心事で、AIの回答でも、ERP選定の観点としてSOC報告書に触れたものがありました。</p>
+  <p>他社では、SOC報告書の受領をプレスリリースとして配信し、専門媒体が記事にした例があります（2025年7月、ソラコムのSOC2 Type2保証報告書の受領をLOGISTICS TODAYが報道）。対象サービスと評価対象期間を正確に添えれば、PROACTIVEの経理・内部統制の打ち出しを支える発表の題材になると考えます。</p>
+</section>
+
+<section class="sec">
+  <p class="no">6</p>
+  <h2>ご一緒に検討いただきたいこと</h2>
+  <p class="key">事業部門が題材を出し、広報の皆さまが発表と媒体への情報提供を担い、IDEATECHが効果を計測する形を考えています。</p>
+  <div class="tbl">
+    <table class="roles-t">
+      <thead><tr><th>取り組み</th><th>内容</th><th>主な担い手</th></tr></thead>
+      <tbody>
+        <tr><td data-label="取り組み"><b>発表の機会を途切れさせない</b></td><td data-label="内容">月1本程度を目安に、PROACTIVEの発表の機会をつくる。製品・制度対応・第三者評価・事例・調査結果など、今のニュース価値の基準で記事になる題材を中心に。</td><td data-label="主な担い手">事業部門（題材）／広報（判断・配信）</td></tr>
+        <tr><td data-label="取り組み"><b>新しい論点で、先に出す</b></td><td data-label="内容">AIエージェントとの接続、建設業、経理の統制など、AIが選定基準として語り始めている論点で、PROACTIVEを主語にした発表を他社より先に出す。</td><td data-label="主な担い手">事業部門（題材）／広報</td></tr>
+        <tr><td data-label="取り組み"><b>IT専門媒体に届ける</b></td><td data-label="内容">クラウドWatch・IT Leadersに加え、ITmedia、ZDNET Japan、TECH+、EnterpriseZineなどへ、発表の事前の情報提供や取材の提案を行う。ITmediaでは、2024年11月の統合以降のPROACTIVEの製品ニュースを確認できておらず、優先度が高いと考えます。</td><td data-label="主な担い手">広報</td></tr>
+        <tr><td data-label="取り組み"><b>まだ出していない事実を出す</b></td><td data-label="内容">SOC1保証報告書の受領をはじめ、第三者評価・認証・制度対応のうち配信していないものを棚卸しし、配信できるものから出す。</td><td data-label="主な担い手">事業部門（棚卸し）／広報</td></tr>
+        <tr><td data-label="取り組み"><b>表記をそろえる</b></td><td data-label="内容">「AIネイティブERP PROACTIVE（SCSK）」のように一意に特定できる表記を使い、PROACTIVEの導入実績（7,500社超）とSCSK全体の実績を区別して書く。</td><td data-label="主な担い手">事業部門／広報</td></tr>
+        <tr><td data-label="取り組み"><b>効果を確かめる</b></td><td data-label="内容">発表ごとに、専門メディアの記事になったか、AIの回答での言及・推奨がどう変わったかを毎月計測し、共有する。</td><td data-label="主な担い手">IDEATECH</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="sec">
+  <h2 class="plain">よくいただくご質問</h2>
+  <dl class="qa">
+    <dt>AIのために、ニュース価値の基準を下げる必要がありますか。</dt>
+    <dd>ありません。AI向けの特別な文章を書く必要もありません。今の基準で記事になる題材を、途切れずに出していくことが基本です。そのうえで、見出しと冒頭の文に、PROACTIVEの製品名と、結びつけたい言葉（AIエージェント、建設業、経理など）を一緒に入れていただければ十分です。</dd>
+    <dt>PR TIMESに出せば、AIに読まれるのですか。</dt>
+    <dd>業種を問わない全体では、PR TIMESはChatGPTの引用元2位です。ただ、ERPに関する質問では、配信サイトのページそのものの引用は0.6%でした。効いているのは、配信をきっかけに専門メディアが記事を書くことです。配信と、媒体への情報提供をセットで考えるのが現実的です。</dd>
+    <dt>本数はどのくらい必要ですか。</dt>
+    <dd>本数とAI上の言及に、はっきりした関係は見られませんでした。目安としては月1本程度ですが、本数よりも、発表の空白期間をつくらないことと、新しい論点で先に出すことを重視しています。</dd>
+    <dt>効果はどう確かめますか。</dt>
+    <dd>IDEATECHが毎月、発表ごとの記事化の状況と、AIの回答でのPROACTIVEの言及・推奨を計測してご報告します。AIの回答は毎回同じとは限らないため、1か月ごとの増減ではなく、数か月単位の傾向で判断します。</dd>
+  </dl>
+</section>
+
+<section class="sec appendix">
+  <p class="no">付録A</p>
+  <h2>計測についての注記</h2>
+  <p>IDEATECHの月次レポートで使っている「社外の言及（サイテーション）」の件数は、計測ツールAhrefsが検出した範囲の件数で、存在するすべての記事を数えたものではありません。今回、6本の発表について記事を一つずつ確認したところ、確認できた編集記事9本のうち、Ahrefsが検出していたのは5本でした（クラウドWatch 2本、LOGISTICS TODAY、電波新聞デジタルの記事が未検出）。</p>
+  <div class="tbl">
+    <table>
+      <thead><tr><th>数値</th><th>読み方</th></tr></thead>
+      <tbody>
+        <tr><td data-label="数値">社外の言及の件数、当月の新規言及</td><td data-label="読み方">Ahrefsが検出できた範囲の下限値として読みます。「新規0件」は「新しい記事がない」ではなく「検出されなかった」を意味します。増減は傾向として扱います。</td></tr>
+        <tr><td data-label="数値">発表が記事になったか</td><td data-label="読み方">Ahrefsの検出に加え、各媒体のサイトと検索での確認を併用して判定します。今後の月次レポートでは、発表ごとにこの確認を行います。</td></tr>
+        <tr><td data-label="数値">AIが引用したページ、AIの回答</td><td data-label="読み方">AIが実際に回答で示した引用と回答の本文を集計したもので、社外の言及とは別の指標です。「AIが何を読んだか」の実測として扱います。</td></tr>
+        <tr><td data-label="数値">公開日</td><td data-label="読み方">Ahrefsが保持する日付には、公開日ではなく検出日とみられるものが含まれます。年単位の傾向にのみ使い、個別の記事の日付は媒体のページで確認します。</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>9月の月次レポートの「当月に新しく書かれた社外の言及は2か月連続で0件」は、この期間にPROACTIVEの発表がなかったことと整合していますが、検出漏れがなかったとは言えないため、上記の読み方で解釈してください。</p>
+</section>
+
+<section class="sec appendix">
+  <p class="no">付録B</p>
+  <h2>補足データ</h2>
+  <h3>各社のPR TIMESでの配信本数と、AIの言及</h3>
+  <div class="tbl">
+    <table>
+      <thead><tr><th>製品</th><th>PR TIMES（直近12か月）</th><th>うち製品・ERP関連</th><th>製品名なしの質問152回答での言及</th></tr></thead>
+      <tbody>
+        <tr><td data-label="製品">SAP</td><td class="n" data-label="PR TIMES（直近12か月）">0本</td><td class="n" data-label="うち製品・ERP関連">0本</td><td class="n" data-label="製品名なしの質問152回答での言及">17</td></tr>
+        <tr><td data-label="製品">OBIC7</td><td class="n" data-label="PR TIMES（直近12か月）">0本</td><td class="n" data-label="うち製品・ERP関連">0本</td><td class="n" data-label="製品名なしの質問152回答での言及">9</td></tr>
+        <tr class="me"><td data-label="製品">PROACTIVE</td><td class="n" data-label="PR TIMES（直近12か月）">45本</td><td class="n" data-label="うち製品・ERP関連">6本</td><td class="n" data-label="製品名なしの質問152回答での言及">7</td></tr>
+        <tr><td data-label="製品">勘定奉行（OBC）</td><td class="n" data-label="PR TIMES（直近12か月）">61本</td><td class="n" data-label="うち製品・ERP関連">22本</td><td class="n" data-label="製品名なしの質問152回答での言及">7</td></tr>
+        <tr><td data-label="製品">マネーフォワード</td><td class="n" data-label="PR TIMES（直近12か月）">168本</td><td class="n" data-label="うち製品・ERP関連">59本</td><td class="n" data-label="製品名なしの質問152回答での言及">6</td></tr>
+        <tr><td data-label="製品">建設業向け専業（PROCES.S）</td><td class="n" data-label="PR TIMES（直近12か月）">36本</td><td class="n" data-label="うち製品・ERP関連">20本</td><td class="n" data-label="製品名なしの質問152回答での言及">4</td></tr>
+        <tr><td data-label="製品">MJS（ミロク情報サービス）</td><td class="n" data-label="PR TIMES（直近12か月）">70本</td><td class="n" data-label="うち製品・ERP関連">49本</td><td class="n" data-label="製品名なしの質問152回答での言及">1</td></tr>
+        <tr><td data-label="製品">Works HUE</td><td class="n" data-label="PR TIMES（直近12か月）">31本</td><td class="n" data-label="うち製品・ERP関連">24本</td><td class="n" data-label="製品名なしの質問152回答での言及">0</td></tr>
+        <tr><td data-label="製品">NTTデータ Biz∫</td><td class="n" data-label="PR TIMES（直近12か月）">12本</td><td class="n" data-label="うち製品・ERP関連">10本</td><td class="n" data-label="製品名なしの質問152回答での言及">0</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="src">出典：PR TIMES各社企業ページ（2026-10-15取得、対象期間2025-10-15〜2026-10-15）。言及数はAhrefs Brand Radar 応答ログ（2026-09-24計測）。各社が自社サイトのみで出している発表は含みません。製品関連の配信本数と各指標の順位相関（11製品）は、いずれも正の相関が確認されませんでした。</p>
+  <h3>PROACTIVE／SCSKに言及する社外のページ（Ahrefsの検出分）</h3>
+  <div class="tbl">
+    <table>
+      <thead><tr><th>媒体の種類</th><th>件数</th><th>うち製品に言及</th></tr></thead>
+      <tbody>
+        <tr class="me"><td data-label="媒体の種類">報道・専門メディア</td><td class="n" data-label="件数">75件</td><td class="n" data-label="うち製品に言及">56件</td></tr>
+        <tr><td data-label="媒体の種類">ベンダー／SIerのオウンドメディア</td><td class="n" data-label="件数">37件</td><td class="n" data-label="うち製品に言及">28件</td></tr>
+        <tr><td data-label="媒体の種類">IR・株式・金融情報</td><td class="n" data-label="件数">7件</td><td class="n" data-label="うち製品に言及">0件</td></tr>
+        <tr><td data-label="媒体の種類">ニュースポータル（転載）</td><td class="n" data-label="件数">6件</td><td class="n" data-label="うち製品に言及">6件</td></tr>
+        <tr><td data-label="媒体の種類">その他（自動生成とみられるサイト、レビュー・比較サイト、ブログ、配信サイト）</td><td class="n" data-label="件数">7件</td><td class="n" data-label="うち製品に言及">5件</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="src">出典：Ahrefs サイテーション明細（2026-09-24取得、計132件）。媒体の分類は当方。報道・専門メディアの製品記事56件のうち32件は「SCSK、◯◯」で始まる発表受けの見出しで、媒体はIT Leaders、TECH+、ZDNET Japan、クラウドWatch、EnterpriseZine、ビジネス+IT、週刊BCN+、日経クロステックなどのIT専門媒体が中心です。</p>
+</section>
+
+<section class="sec">
+  <h2 class="plain">この資料の前提と限界</h2>
+  <p>AIの回答の計測は2026年8月26日と9月24日の2回分で、ChatGPT・Gemini・Copilot・Perplexityの4つを対象にしています。AIの回答は同じ質問でも毎回同じとは限らず、本資料は因果関係を断定するものではありません。第4章の事例は、発表と記事・AIの回答が時期と内容の両面で対応している実例として示しています。編集記事の確認は検索と各媒体のサイトで行っており、見つからなかった記事がある可能性があります。外部調査（Ahrefs）の順位は数か月で入れ替わるため、傾向として扱っています。</p>
+  <p>本資料は、広報部門の活動を評価するものではありません。PROACTIVEの発表は専門メディアに継続して取り上げられており、その成果がAI検索でも材料として働いていることをお伝えするものです。</p>
+  <p class="src">主な出典：Ahrefs Brand Radar（Cited pages・応答ログ・サイテーション、2026-09-24取得）、PR TIMES各社企業ページ（2026-10-15取得）、各媒体の記事（2026-10-16確認）、Ahrefs「日本でAIが引用するドメインランキング」2026年6月版（https://ahrefs.com/ja/blog/brand-radar-top-10-cited-domains-2026-june/）・9月版（https://ahrefs.com/ja/blog/brand-radar-top-10-cited-domains-2026-september/）。</p>
+</section>
+
+</div>
+
+<footer>
+  <p>株式会社IDEATECH　PROACTIVE LLMO支援チーム</p>
+  <p>© 2026 株式会社IDEATECH</p>
+</footer>
+
+</body>
+</html>
