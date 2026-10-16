@@ -245,6 +245,35 @@ table.roles-t td:last-child{width:20%;font-size:13px;color:var(--ink2)}
 .appendix{background:var(--paper2)}
 .appendix .no{color:var(--ink3)}
 @media (max-width:720px){.about{padding:22px 18px 16px;margin-top:12px}table.roles-t td:first-child,table.roles-t td:last-child{width:auto}}
+
+.mech{border:1px solid var(--rule-strong);background:var(--paper);margin:18px 0;padding:20px 22px 16px}
+.mech .mh{display:flex;align-items:baseline;gap:12px;margin-bottom:10px}
+.mech .mn{font-family:var(--serif);font-weight:700;font-size:26px;color:var(--accent);line-height:1}
+.mech h3,section.sec .mech .mh h3{margin:0;font-family:var(--serif);font-size:18px;line-height:1.5}
+.mbody{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:20px;align-items:start}
+.mbody p{font-size:15px;margin:0 0 .8em}
+.mfig{background:var(--paper2);border:1px solid var(--rule);padding:14px 16px}
+.mfig .fcap{font-size:12px;color:var(--ink3);margin:0 0 8px}
+.mfig .fq{font-family:var(--serif);font-weight:700;font-size:17px;margin:0 0 10px}
+.mrow{display:grid;grid-template-columns:4.5em minmax(0,1fr);gap:8px;align-items:center;font-size:14px;margin-bottom:6px}
+.mrow i{display:block;height:14px;width:var(--w);background:var(--accent)}
+.mrow.lo i{background:var(--bar-g)}
+.qa2{font-size:14px;line-height:1.6;border-left:3px solid var(--accent);padding:6px 10px;margin:0 0 8px;background:var(--paper)}
+.qa2.ng{border-left-color:var(--amber)}
+.qa2 b{display:block;font-size:13px;color:var(--ink3);font-weight:400}
+.qa2 .r{font-weight:700}
+.docs{display:grid;grid-template-columns:1fr 1fr;gap:12px;text-align:center}
+.docs .grp{display:flex;flex-wrap:wrap;gap:4px;justify-content:center;min-height:64px;align-content:center}
+.doc{display:inline-block;width:16px;height:21px;border:1.5px solid var(--ink3);border-radius:2px;background:repeating-linear-gradient(var(--paper) 0 4px,var(--rule-strong) 4px 5px)}
+.doc.c2{border-color:var(--accent)}.doc.c3{border-color:var(--amber)}
+.docs .eq{font-family:var(--serif);font-weight:700;font-size:20px;margin-top:6px}
+.docs .lb{font-size:12px;color:var(--ink3)}
+.fn3 .st{padding:8px 12px;margin:0 auto 4px;text-align:center;font-size:13.5px;line-height:1.5;background:var(--accent-soft);border:1px solid var(--accent)}
+.fn3 .st:nth-child(1){width:100%}.fn3 .st:nth-child(3){width:72%}.fn3 .st:nth-child(5){width:46%;background:var(--accent);color:#fff}
+.fn3 .ar{text-align:center;color:var(--ink3);font-size:12px;margin:0 0 4px}
+.mpaper{font-size:12.5px;color:var(--ink3);margin:10px 0 6px!important;padding-top:8px;border-top:1px solid var(--rule)}
+.mpr{font-size:14.5px;margin:0!important;padding:8px 12px;background:var(--amber-soft);border-left:3px solid var(--amber)}
+@media (max-width:720px){.mbody{grid-template-columns:1fr}.mech{padding:16px 14px 12px}}
 </style>
 </head>
 <body>
@@ -276,8 +305,10 @@ table.roles-t td:last-child{width:20%;font-size:13px;color:var(--ink2)}
     <li><strong>AIが読む社外の情報の中心に、公式発表と専門メディアがある。</strong>国内のAIの引用元を調べた外部調査では、業種を問わない全体でPR TIMESがChatGPTの引用元2位でした。業界を絞った質問では、AIはその業界の定番の専門メディアを読みます。ERPにとっての定番は、IT専門媒体です。</li>
     <li><strong>PROACTIVEの発表は、専門メディアの記事になっている。</strong>直近12か月の6本の発表のうち4本で、IT Leaders、クラウドWatchなどの記事を確認できました。広報の皆さまが出されている発表は、AIが読む材料を実際に生んでいます。</li>
     <li><strong>差がついたのは、新しい論点。</strong>Works HUEは9月4日にAIエージェントとの接続規格（MCP）への対応を発表し、IT専門媒体3誌が記事にしました。同じ月、ChatGPTは、前月までPROACTIVEを「第一候補」としていた回答で、Works HUEを第一候補に入れ替えています。PROACTIVEのAIエージェント戦略（5月29日）は、確認できた範囲では物流専門媒体の1本で、主要IT専門媒体の記事は見つかりませんでした。</li>
+    <li><strong>AIの仕組みからも、発表が効く理由が説明できる。</strong>AIは、何度も、別々の文章で、一緒に書かれた言葉から製品を覚えます。またAIは答える前に検索で候補を絞り込むため、社外に記事がない製品はそもそも候補に入りにくくなります。いずれも研究で確かめられている仕組みです。</li>
+    <li><strong>製品ニュースに加えて、調査リリースを。</strong>PROACTIVEでは、建設業、AIエージェント×基幹業務、経理×生成AIの調査をすでに進めています。調査結果を調査リリースとして発表すれば、製品の発表がない時期にも発表の機会をつくれます。さらに、調査テーマの言葉とPROACTIVEの製品名が同じ文に並ぶ記事が生まれ、AIの中でPROACTIVEと論点の結びつきを強めることにつながります。</li>
   </ol>
-  <p class="conclusion">AI検索で効いているのは、公式の発表と、それを受けた専門メディアの記事、つまり広報の皆さまの仕事です。PROACTIVEでは、事業部門が題材を出し、広報の皆さまが発表と媒体への情報提供を担う形で、発表の機会を途切れさせないこと、そしてAIの選定基準が動いている論点で先に出していくことを、ご一緒に検討いただきたいと考えています。</p>
+  <p class="conclusion">AI検索で効いているのは、公式の発表と、それを受けた専門メディアの記事、つまり広報の皆さまの仕事です。PROACTIVEでは、発表をもう一段積極的に行いたいと考えています。製品ニュースに加えて、進めている調査の結果を調査リリースとして発表し、AIの選定基準が動いている論点で、PROACTIVEの名前が社外の記事に載る機会を増やしていくことを、ご一緒に検討いただければ幸いです。</p>
 </section>
 
 <section class="sec">
@@ -404,6 +435,132 @@ table.roles-t td:last-child{width:20%;font-size:13px;color:var(--ink2)}
 
 <section class="sec">
   <p class="no">5</p>
+  <h2>AIの仕組みから見ても、発表が効く</h2>
+  <p class="key">ここまでがPROACTIVEの現状です。では、なぜ発表と記事が効くのか。AIの仕組みに関する研究のうち、広報の仕事に関わる4つを、たとえを使って説明します。</p>
+
+  <div class="mech">
+    <div class="mh"><span class="mn">1</span><h3>AIは「一緒に書かれた言葉」で覚える</h3></div>
+    <div class="mbody">
+      <div class="mtext">
+        <p>生成AIは、大量の文章を読み、ある言葉の次にどんな言葉が来やすいかを覚えています。人が「夏といえば」と聞かれて「花火」と答えるのは、その組み合わせを何度も見聞きしてきたからです。AIも同じで、「AIエージェント対応のERPといえば」の次に出てくる製品名は、その言葉と一緒に書かれてきた回数の多い製品になります。</p>
+        <p>研究でも、関連する文章をたくさん読んだ知識ほど、AIが正しく答えられることが確かめられています。</p>
+      </div>
+      <div class="mfig">
+        <p class="fcap">イメージ：一緒に書かれてきた回数</p>
+        <p class="fq">「夏といえば ＿＿」</p>
+        <div class="mrow"><span>花火</span><i style="--w:100%"></i></div>
+        <div class="mrow lo"><span>スイカ</span><i style="--w:62%"></i></div>
+        <div class="mrow lo"><span>紅葉</span><i style="--w:6%"></i></div>
+      </div>
+    </div>
+    <p class="mpaper">研究：Kandpal ほか（ICML 2023）。学習した文章の中に関連する文書が多い知識ほど、AIの正答率が高い。</p>
+    <p class="mpr"><b>広報にとっての意味</b>　PROACTIVEと、結びつけたい言葉（AIエージェント、建設業、経理など）が一緒に書かれた記事を、増やしていくこと。</p>
+  </div>
+
+  <div class="mech">
+    <div class="mh"><span class="mn">2</span><h3>AIは「書かれた向き」でしか覚えない</h3></div>
+    <div class="mbody">
+      <div class="mtext">
+        <p>AIは、読んだ文章の向きのとおりに覚えます。研究では、「トム・クルーズの母は誰？」には答えられても、逆向きの「メアリー・リー・ファイファーの息子は誰？」には答えにくいことが示されました。</p>
+        <p>「PROACTIVEはAIネイティブなERPです」と書かれていても、「AIネイティブなERPといえば？」と聞かれたときに、PROACTIVEが出てくるとは限らないということです。</p>
+      </div>
+      <div class="mfig">
+        <p class="fcap">論文の実験（GPT-4の正答率）</p>
+        <div class="qa2"><b>トム・クルーズの母は？</b><span class="r">メアリー・リー・ファイファー　79%</span></div>
+        <div class="qa2 ng"><b>メアリー・リー・ファイファーの息子は？</b><span class="r">トム・クルーズ　33%</span></div>
+      </div>
+    </div>
+    <p class="mpaper">研究：Berglund ほか（ICLR 2024）「逆転の呪い（Reversal Curse）」。「AはB」と学習しても「BはA」は自動では学習されない。</p>
+    <p class="mpr"><b>広報にとっての意味</b>　「PROACTIVEは〜のERP」だけでなく、「AIネイティブERPの『PROACTIVE』」のように、カテゴリの言葉が先に来る書き方も入れること。</p>
+  </div>
+
+  <div class="mech">
+    <div class="mh"><span class="mn">3</span><h3>同じ文章のコピーは、1本として数えられる</h3></div>
+    <div class="mbody">
+      <div class="mtext">
+        <p>AIの開発では、学習に使う文章から、ほぼ同じ文章を取り除く処理が行われています。同じチラシを100枚配っても、AIの勉強の上では1枚に近い扱いになると考えられます。</p>
+        <p>効くのは、記者がそれぞれの言葉で書いた、文面の異なる記事です。</p>
+      </div>
+      <div class="mfig">
+        <div class="docs">
+          <div><div class="grp"><span class="doc"></span><span class="doc"></span><span class="doc"></span><span class="doc"></span><span class="doc"></span><span class="doc"></span><span class="doc"></span><span class="doc"></span></div><div class="eq">≒ 1本</div><div class="lb">同じ文面の転載</div></div>
+          <div><div class="grp"><span class="doc"></span><span class="doc c2"></span><span class="doc c3"></span></div><div class="eq">＝ 3本</div><div class="lb">記者が別々に書いた記事</div></div>
+        </div>
+      </div>
+    </div>
+    <p class="mpaper">研究：Brown ほか（GPT-3の開発論文、NeurIPS 2020）。学習データから、内容がほぼ重複する文書を取り除いたと報告。</p>
+    <p class="mpr"><b>広報にとっての意味</b>　配信して終わりにせず、専門メディアが自分の言葉で書く記事につなげること。</p>
+  </div>
+
+  <div class="mech">
+    <div class="mh"><span class="mn">4</span><h3>AI検索には「書類選考」がある</h3></div>
+    <div class="mbody">
+      <div class="mtext">
+        <p>ChatGPTなどがウェブを調べて答えるときは、まず質問をいくつもの検索に広げて多くのページを集め、質問との意味の近さでふるいにかけ、残った少数のページを読んで答えをつくります。面接（回答）の前に、書類選考があるようなものです。</p>
+        <p>社外に記事がなければ、書類選考の土俵にすら上がれません。文章の書き方を工夫する研究の多くは、最後の「読んで答える」段階だけを対象にしています。</p>
+      </div>
+      <div class="mfig">
+        <p class="fcap">模式図（件数は説明のためのイメージ）</p>
+        <div class="fn3">
+          <div class="st">検索で集める<br>数百〜千件</div>
+          <div class="ar">▼ 意味の近さでふるいにかける</div>
+          <div class="st">残ったページ<br>10件前後</div>
+          <div class="ar">▼ 読んで答えをつくる</div>
+          <div class="st">回答</div>
+        </div>
+      </div>
+    </div>
+    <p class="mpaper">研究・資料：Google「AIモード」の解説（2025年。質問を複数の検索に広げる手法）、Nogueira & Cho（2019。意味の近さによる並べ替え）、Aggarwal ほか（KDD 2024。回答の段階での書き方の工夫）。</p>
+    <p class="mpr"><b>広報にとっての意味</b>　製品名を出さない質問で候補に入るには、社外の記事が欠かせないこと。</p>
+  </div>
+
+  <div class="tbl">
+    <table>
+      <thead><tr><th>AIの仕組み</th><th>PROACTIVEの現状（第1〜4章）</th></tr></thead>
+      <tbody>
+        <tr><td data-label="AIの仕組み">1　一緒に書かれた言葉で覚える</td><td data-label="PROACTIVEの現状">AIエージェントの論点で、PROACTIVEと一緒に書かれた記事がIT専門媒体に出ていない</td></tr>
+        <tr><td data-label="AIの仕組み">2　書かれた向きでしか覚えない</td><td data-label="PROACTIVEの現状">「PROACTIVEとは」には答えられても、「おすすめのERPは」などの152回答でPROACTIVEが挙がったのは7回答</td></tr>
+        <tr><td data-label="AIの仕組み">3　コピーは1本として数えられる</td><td data-label="PROACTIVEの現状">配信サイトのページそのものの引用は0.6%。効いているのは専門メディアの記事</td></tr>
+        <tr><td data-label="AIの仕組み">4　答える前に書類選考がある</td><td data-label="PROACTIVEの現状">製品名を出さない質問では、PROACTIVEのサイトが根拠に使われたのは2.3%</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>4つとも、「新しい事実を発表し、記者がそれぞれの言葉で書く記事にする」という広報の仕事に直結しています。</p>
+  <p class="note">紹介した研究は、主に海外の大規模なAIを対象にしたものです。AIの仕組みの説明として紹介しており、PROACTIVEのデータとの因果関係を示すものではありません。</p>
+</section>
+
+<section class="sec">
+  <p class="no">6</p>
+  <h2>製品ニュースに加えて、調査リリースを</h2>
+  <p class="key">製品の発表は、開発の予定に左右されます。調査リリースを加えれば、発表の機会を増やしながら、AIの選定基準が動いている論点とPROACTIVEを結びつけられます。</p>
+  <p>第5章で見たとおり、生成AIは、一緒に書かれた言葉から製品とテーマの結びつきを覚えます。「AIエージェントに対応した国産ERPといえばPROACTIVE」と答えてもらうには、AIエージェントや基幹業務といった言葉と、PROACTIVEの製品名が同じ文で書かれた記事が、複数の媒体に、繰り返し載っている必要があります。調査リリースは、この「同じ文に並ぶ」状況（共起）を、こちらからつくれる発表です。</p>
+  <div class="roles">
+    <div class="role">
+      <span class="rn">1</span>
+      <h4>発表の機会を自分でつくれる</h4>
+      <p>製品の発表がない時期にも、市場の課題をデータで示す発表ができます。6月以降の発表の空白も、調査リリースで埋めることができました。</p>
+    </div>
+    <div class="role">
+      <span class="rn">2</span>
+      <h4>専門メディアが記事にしやすい</h4>
+      <p>独自の数字は、記事の見出しや本文で引用されやすい素材です。生成AIの回答に採用されやすい書き方を検証した研究（Aggarwal et al., KDD 2024）でも、統計データや出典を加えることが有効な手法の一つとして報告されています。</p>
+    </div>
+    <div class="role hi">
+      <span class="rn">3</span>
+      <h4>論点の言葉と製品名が、同じ文に並ぶ</h4>
+      <p>「基幹業務でのAIエージェント活用に関する調査（PROACTIVE調べ）」のように、調査テーマの言葉と製品名が同じ文に並びます。記事になれば、別々の媒体で書かれた文章として社外に残ります。</p>
+    </div>
+  </div>
+  <div class="card a" style="margin:16px 0 10px">
+    <p class="k">見出しの例（説明のための例で、数値は仮置きです）</p>
+    <h4>基幹業務へのAIエージェント導入、◯割が「人の承認を残したい」と回答 ― SCSK「PROACTIVE」調べ</h4>
+    <p>製品の宣伝ではなく市場の実態を示す発表のため、ニュース価値の基準とも両立しやすい形です。同時に、「AIエージェント」「基幹業務」「承認」といった論点の言葉と、PROACTIVEの製品名が同じ文に並びます。</p>
+  </div>
+  <p>PROACTIVEでは、IDEATECHとともに、建設業の基幹システム、AIエージェント×基幹業務、経理×生成AIの調査を進めています。現在はホワイトペーパーと選び方のコラムにしていますが、調査リリースとしても発表すれば、AIエージェントのように差がついた論点で、PROACTIVEを主語にした社外の記事を生む機会になります。</p>
+</section>
+
+<section class="sec">
+  <p class="no">7</p>
   <h2>まだ発表していない事実：SOC1保証報告書</h2>
   <p class="key">PROACTIVEは2026年4月、SOC1保証報告書（Type2）を受領しています。お知らせでの掲示にとどまり、プレスリリースとしては配信されていません。</p>
   <p>SOC1保証報告書は、サービスを提供する側の内部統制のうち、利用する企業の財務報告に関係するものについて、監査人が整備・運用の状況を評価した報告書です。経理部門が基幹システムを選ぶとき、監査や内部統制への対応は大きな関心事で、AIの回答でも、ERP選定の観点としてSOC報告書に触れたものがありました。</p>
@@ -411,14 +568,15 @@ table.roles-t td:last-child{width:20%;font-size:13px;color:var(--ink2)}
 </section>
 
 <section class="sec">
-  <p class="no">6</p>
+  <p class="no">8</p>
   <h2>ご一緒に検討いただきたいこと</h2>
   <p class="key">事業部門が題材を出し、広報の皆さまが発表と媒体への情報提供を担い、IDEATECHが効果を計測する形を考えています。</p>
   <div class="tbl">
     <table class="roles-t">
       <thead><tr><th>取り組み</th><th>内容</th><th>主な担い手</th></tr></thead>
       <tbody>
-        <tr><td data-label="取り組み"><b>発表の機会を途切れさせない</b></td><td data-label="内容">月1本程度を目安に、PROACTIVEの発表の機会をつくる。製品・制度対応・第三者評価・事例・調査結果など、今のニュース価値の基準で記事になる題材を中心に。</td><td data-label="主な担い手">事業部門（題材）／広報（判断・配信）</td></tr>
+        <tr><td data-label="取り組み"><b>発表をもう一段積極的に</b></td><td data-label="内容">月1本程度を目安に、PROACTIVEの発表の機会をつくる。製品・制度対応・第三者評価・事例に調査リリースを組み合わせ、製品の発表がない月も発表が途切れないようにする。</td><td data-label="主な担い手">事業部門（題材）／広報（判断・配信）</td></tr>
+        <tr><td data-label="取り組み"><b>調査結果を、調査リリースとして発表する</b></td><td data-label="内容">建設業、AIエージェント×基幹業務、経理×生成AIの各調査を、ホワイトペーパー・コラムに加えて調査リリースとしても発表する。見出しと冒頭の文で、調査テーマの言葉とPROACTIVEの製品名を同じ文に並べる。</td><td data-label="主な担い手">IDEATECH（調査設計・原稿案）／広報（判断・配信・媒体対応）</td></tr>
         <tr><td data-label="取り組み"><b>新しい論点で、先に出す</b></td><td data-label="内容">AIエージェントとの接続、建設業、経理の統制など、AIが選定基準として語り始めている論点で、PROACTIVEを主語にした発表を他社より先に出す。</td><td data-label="主な担い手">事業部門（題材）／広報</td></tr>
         <tr><td data-label="取り組み"><b>IT専門媒体に届ける</b></td><td data-label="内容">クラウドWatch・IT Leadersに加え、ITmedia、ZDNET Japan、TECH+、EnterpriseZineなどへ、発表の事前の情報提供や取材の提案を行う。ITmediaでは、2024年11月の統合以降のPROACTIVEの製品ニュースを確認できておらず、優先度が高いと考えます。</td><td data-label="主な担い手">広報</td></tr>
         <tr><td data-label="取り組み"><b>まだ出していない事実を出す</b></td><td data-label="内容">SOC1保証報告書の受領をはじめ、第三者評価・認証・制度対応のうち配信していないものを棚卸しし、配信できるものから出す。</td><td data-label="主な担い手">事業部門（棚卸し）／広報</td></tr>
@@ -438,6 +596,8 @@ table.roles-t td:last-child{width:20%;font-size:13px;color:var(--ink2)}
     <dd>業種を問わない全体では、PR TIMESはChatGPTの引用元2位です。ただ、ERPに関する質問では、配信サイトのページそのものの引用は0.6%でした。効いているのは、配信をきっかけに専門メディアが記事を書くことです。配信と、媒体への情報提供をセットで考えるのが現実的です。</dd>
     <dt>本数はどのくらい必要ですか。</dt>
     <dd>本数とAI上の言及に、はっきりした関係は見られませんでした。目安としては月1本程度ですが、本数よりも、発表の空白期間をつくらないことと、新しい論点で先に出すことを重視しています。</dd>
+    <dt>製品の発表がない月は、何を出せば良いですか。</dt>
+    <dd>調査リリースが有効です。市場の課題をデータで示す発表は、製品の開発予定に左右されず、専門メディアにも取り上げられやすい題材です。調査の設計から原稿案まではIDEATECHがご支援し、広報の皆さまには発表の判断と配信、媒体への情報提供をお願いする形を想定しています。</dd>
     <dt>効果はどう確かめますか。</dt>
     <dd>IDEATECHが毎月、発表ごとの記事化の状況と、AIの回答でのPROACTIVEの言及・推奨を計測してご報告します。AIの回答は毎回同じとは限らないため、1か月ごとの増減ではなく、数か月単位の傾向で判断します。</dd>
   </dl>
@@ -503,6 +663,7 @@ table.roles-t td:last-child{width:20%;font-size:13px;color:var(--ink2)}
   <p>AIの回答の計測は2026年8月26日と9月24日の2回分で、ChatGPT・Gemini・Copilot・Perplexityの4つを対象にしています。AIの回答は同じ質問でも毎回同じとは限らず、本資料は因果関係を断定するものではありません。第4章の事例は、発表と記事・AIの回答が時期と内容の両面で対応している実例として示しています。編集記事の確認は検索と各媒体のサイトで行っており、見つからなかった記事がある可能性があります。外部調査（Ahrefs）の順位は数か月で入れ替わるため、傾向として扱っています。</p>
   <p>本資料は、広報部門の活動を評価するものではありません。PROACTIVEの発表は専門メディアに継続して取り上げられており、その成果がAI検索でも材料として働いていることをお伝えするものです。</p>
   <p class="src">主な出典：Ahrefs Brand Radar（Cited pages・応答ログ・サイテーション、2026-09-24取得）、PR TIMES各社企業ページ（2026-10-15取得）、各媒体の記事（2026-10-16確認）、Ahrefs「日本でAIが引用するドメインランキング」2026年6月版（https://ahrefs.com/ja/blog/brand-radar-top-10-cited-domains-2026-june/）・9月版（https://ahrefs.com/ja/blog/brand-radar-top-10-cited-domains-2026-september/）。</p>
+  <p class="src">AIの仕組みに関する研究：Kandpal, N. ほか（2023）Large Language Models Struggle to Learn Long-Tail Knowledge（ICML 2023）／Berglund, L. ほか（2024）The Reversal Curse（ICLR 2024）／Brown, T. ほか（2020）Language Models are Few-Shot Learners（NeurIPS 2020）／Nogueira, R. & Cho, K.（2019）Passage Re-ranking with BERT／Aggarwal, P. ほか（2024）GEO: Generative Engine Optimization（KDD 2024）／Google「AIモード」に関する公式ブログ（2025年）。</p>
 </section>
 
 </div>
